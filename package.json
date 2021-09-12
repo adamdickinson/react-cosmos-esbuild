@@ -1,0 +1,27 @@
+{
+  "name": "@adamdickinson/react-cosmos-esbuild",
+  "version": "1.0.0",
+  "description": "Support for esbuild with React Cosmos.",
+  "repository": "https://github.com/adamdickinson/react-cosmos-esbuild",
+  "author": "Adam Dickinson <me@adamdickinson.com.au>",
+  "license": "MIT",
+  "scripts": {
+    "build": "./scripts/build.js",
+    "ci": "yarn install --frozen-lockfile",
+    "prepare": "yarn build",
+    "watch": "./scripts/build.js --watch"
+  },
+  "bin": {
+    "cosmos-esbuild": "./dist/cosmos.js"
+  },
+  "devDependencies": {
+    "chalk": "^4.1.2",
+    "dotenv": "^10.0.0",
+    "esbuild": "^0.12.26",
+    "luxon": "^2.0.2",
+    "react-cosmos": "^5.6.3",
+    "react-plugin": "^3.0.0-alpha.3",
+    "rxjs": "^7.3.0",
+    "typescript": "^4.3.5"
+  }
+}
