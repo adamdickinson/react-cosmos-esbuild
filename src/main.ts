@@ -1,7 +1,3 @@
-import 'core-js/features/array/fill'
-import 'core-js/features/array/find'
-import 'core-js/features/array/includes'
-import 'core-js/features/promise'
 import 'regenerator-runtime/runtime'
 
 import { Message } from 'react-cosmos-shared2/util'
