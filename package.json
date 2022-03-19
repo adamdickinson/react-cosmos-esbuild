@@ -19,12 +19,12 @@
   },
   "devDependencies": {
     "chalk": "^4.1.2",
-    "dotenv": "^10.0.0",
-    "esbuild": "^0.12.26",
-    "luxon": "^2.0.2",
-    "react-cosmos": "^5.6.3",
-    "react-plugin": "^3.0.0-alpha.3",
-    "rxjs": "^7.3.0",
-    "typescript": "^4.3.5"
+    "dotenv": "^16.0.0",
+    "esbuild": "^0.14.27",
+    "luxon": "^2.3.1",
+    "react-cosmos": "^5.7.2",
+    "react-plugin": "^3.0.0-alpha.4",
+    "rxjs": "^7.5.5",
+    "typescript": "^4.6.2"
   }
 }
