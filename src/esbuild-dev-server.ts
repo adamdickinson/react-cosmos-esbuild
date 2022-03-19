@@ -1,9 +1,9 @@
 import { Observable, Subscription } from 'rxjs'
 import { first, filter, share } from 'rxjs/operators'
-import { DevServerPluginArgs } from 'react-cosmos/dist/shared/devServer'
+import { DevServerPluginArgs } from 'react-cosmos/dist/devServer/startDevServer'
 import { DomRendererConfig } from 'react-cosmos/dist/shared/rendererConfig'
 import { build, BuildOptions, BuildResult } from 'esbuild'
-import { generateUserDepsModule } from 'react-cosmos/dist/shared/userDeps'
+import { generateUserDepsModule } from 'react-cosmos/dist/userDeps/generateUserDepsModule'
 import { join } from 'path'
 import { writeFileSync } from 'fs'
 import chalk from 'chalk'
@@ -53,6 +53,9 @@ export function esbuildDevServer({ cosmosConfig, expressApp, sendMessage }: DevS
     bundle: true,
     entryPoints: [MAIN_TS_PATH],
     outfile: MAIN_JS_PATH,
+    loader: {
+      '.js': 'jsx'
+    },
     outdir: undefined
   }).pipe(share())
 
