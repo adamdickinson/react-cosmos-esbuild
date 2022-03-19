@@ -2,8 +2,8 @@
 
 const { DateTime } = require('luxon')
 const chalk = require('chalk')
-const dotenv = require('dotenv')
-const path = require('path')
+const fs = require('node:fs/promises')
+const { join } = require('node:path')
 
 const watching = process.argv.includes('--watch')
 
@@ -66,6 +66,7 @@ require('esbuild')
         'esbuild',
         'fs',
         'path',
+        'react',
         'react-cosmos',
         'react-cosmos-playground2',
         'uws',
@@ -81,4 +82,8 @@ require('esbuild')
       platform: 'node'
     }
   )
-  .then(onFulfill, onReject)
+  .then(() => {
+    return fs.copyFile('src/react-shim.js', 'src/react-shim.js')
+  })
+  .then(onFulfill)
+  .catch(onReject)

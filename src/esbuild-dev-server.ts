@@ -56,6 +56,7 @@ export function esbuildDevServer({ cosmosConfig, expressApp, sendMessage }: DevS
     loader: {
       '.js': 'jsx'
     },
+    inject: [join(__dirname, './react-shim.js')],
     outdir: undefined
   }).pipe(share())
 
