@@ -83,7 +83,7 @@ require('esbuild')
     }
   )
   .then(() => {
-    return fs.copyFile('src/react-shim.js', 'src/react-shim.js')
+    return fs.copyFile('src/react-shim.js', 'dist/react-shim.js')
   })
   .then(onFulfill)
   .catch(onReject)
