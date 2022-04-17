@@ -1,10 +1,5 @@
 #!/usr/bin/env node
-
-const { DateTime } = require('luxon')
 const chalk = require('chalk')
-const dotenv = require('dotenv')
-const path = require('path')
-
 const watching = process.argv.includes('--watch')
 
 const getStatusColor = (status) => {
@@ -19,7 +14,7 @@ const getReponseTimeColor = (time) => {
 }
 
 const formatNow = () => {
-  const time = DateTime.now().toISO()
+  const time = new Date().toISOString()
   return chalk.grey.bold`[${time}]`
 }
 
@@ -65,7 +60,6 @@ require('esbuild')
       external: [
         'esbuild',
         'fs',
-        'path',
         'react-cosmos',
         'react-cosmos-playground2',
         'uws',
